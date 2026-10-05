@@ -7,7 +7,7 @@ mod layer;
 mod policy;
 
 pub use self::layer::RetryLayer;
-pub use self::policy::Policy;
+pub use self::policy::{Policy, ReplayId};
 
 use self::future::ResponseFuture;
 use pin_project_lite::pin_project;
@@ -86,9 +86,13 @@ where
     }
 
     fn call(&mut self, request: Request) -> Self::Future {
+        // Seal the replay identity on the *original* request, before cloning
+        // and before the inner service is called. Every later replay must
+        // present the same method/target/body identity.
+        let sealed = self.policy.replay_id(&request);
         let cloned = self.policy.clone_request(&request);
         let future = self.service.call(request);
 
-        ResponseFuture::new(cloned, self.clone(), future)
+        ResponseFuture::new(cloned, self.clone(), future, sealed)
     }
 }
