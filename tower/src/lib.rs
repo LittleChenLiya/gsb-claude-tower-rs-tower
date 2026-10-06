@@ -183,6 +183,8 @@ pub mod load_shed;
 pub mod make;
 #[cfg(feature = "ready-cache")]
 pub mod ready_cache;
+#[cfg(feature = "ready-permit")]
+pub mod ready_permit;
 #[cfg(feature = "reconnect")]
 pub mod reconnect;
 #[cfg(feature = "retry")]

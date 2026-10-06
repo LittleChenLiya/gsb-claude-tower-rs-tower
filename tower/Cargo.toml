@@ -31,6 +31,7 @@ full = [
   "load-shed",
   "make",
   "ready-cache",
+  "ready-permit",
   "reconnect",
   "retry",
   "spawn-ready",
@@ -50,6 +51,7 @@ load = ["tokio/time", "tracing", "pin-project-lite"]
 load-shed = ["pin-project-lite"]
 make = ["pin-project-lite", "tokio"]
 ready-cache = ["futures-core", "futures-util", "indexmap", "tokio/sync", "tracing", "pin-project-lite"]
+ready-permit = ["tokio/sync", "tokio-util", "pin-project-lite"]
 reconnect = ["make", "tracing"]
 retry = ["tokio/time", "util"]
 spawn-ready = ["futures-util", "tokio/sync", "tokio/rt", "util", "tracing"]
