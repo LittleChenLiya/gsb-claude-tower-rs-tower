@@ -5,9 +5,11 @@ pub mod budget;
 pub mod future;
 mod layer;
 mod policy;
+pub mod replay;
 
 pub use self::layer::RetryLayer;
 pub use self::policy::Policy;
+pub use self::replay::{BodyPolicy, Replay, ReplayIdentity, ReplayLayer, ReplayPolicy};
 
 use self::future::ResponseFuture;
 use pin_project_lite::pin_project;
