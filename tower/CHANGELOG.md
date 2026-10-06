@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+### Added
+
+- **limit**: Add `ReadyPermit` and `ReadyPermitLayer`, a single-handle service wrapper that settles the capacity reserved by `poll_ready` exactly once: it is held until the response future ends, or returned to the permit pool when the handle is dropped without issuing a call
+
 ### Changed
 
 - **builder**: Remove Future Sync bound from ServiceBuilder::boxed_clone_sync() ([#851])
