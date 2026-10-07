@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+### Added
+
+- **observe**: Add `ObserveCall` middleware and `observe` feature for recording the terminal state (success, inner error, or drop-canceled) of each service call with a unique id
+
 ### Changed
 
 - **builder**: Remove Future Sync bound from ServiceBuilder::boxed_clone_sync() ([#851])

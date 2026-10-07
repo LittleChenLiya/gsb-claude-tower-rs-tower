@@ -30,6 +30,7 @@ full = [
   "load",
   "load-shed",
   "make",
+  "observe",
   "ready-cache",
   "reconnect",
   "retry",
@@ -49,6 +50,7 @@ limit = ["tokio/time", "tokio/sync", "tokio-util", "tracing", "pin-project-lite"
 load = ["tokio/time", "tracing", "pin-project-lite"]
 load-shed = ["pin-project-lite"]
 make = ["pin-project-lite", "tokio"]
+observe = ["pin-project-lite"]
 ready-cache = ["futures-core", "futures-util", "indexmap", "tokio/sync", "tracing", "pin-project-lite"]
 reconnect = ["make", "tracing"]
 retry = ["tokio/time", "util"]
