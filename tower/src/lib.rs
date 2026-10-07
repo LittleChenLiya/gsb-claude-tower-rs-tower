@@ -181,6 +181,8 @@ pub mod load_shed;
 
 #[cfg(feature = "make")]
 pub mod make;
+#[cfg(feature = "observe")]
+pub mod observe;
 #[cfg(feature = "ready-cache")]
 pub mod ready_cache;
 #[cfg(feature = "reconnect")]
